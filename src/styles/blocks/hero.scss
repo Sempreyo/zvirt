@@ -1,0 +1,318 @@
+.hero {
+	position: relative;
+	padding: 28px 0 0;
+
+	@include max(t) {
+		padding: 10px 0 0;
+	}
+
+	&__container {
+		position: relative;
+		z-index: 1;
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+
+		@include max(ti) {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 16px;
+		}
+	}
+
+	&__top-column {
+		position: relative;
+		flex-basis: 100%;
+	}
+
+	&__title {
+		font-family: $thirdFont;
+		color: $color-main;
+		font-weight: 500;
+		font-size: 52px;
+		line-height: 1.1;
+		text-transform: uppercase;
+
+		@include max(ti) {
+			font-size: fluid(42, 52, 576, 768);
+		}
+
+		@include max(t) {
+			font-size: fluid(19, 42, 0, 576);
+		}
+	}
+
+	&__subtitle {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		padding-left: 5px;
+		margin-top: 20px;
+
+		@include max(ti) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			gap: 10px;
+			padding-left: 0;
+			margin-top: 0;
+			animation: fadeOut 0.3s ease forwards 4s;
+		}
+	}
+
+	&__digit {
+		position: relative;
+		top: -5px;
+		font-family: $thirdFont;
+		color: $color-main;
+		font-weight: 500;
+		font-size: 90px;
+		line-height: 1;
+		text-transform: uppercase;
+
+		@include max(ti) {
+			font-size: fluid(60, 90, 576, 768);
+		}
+
+		@include max(t) {
+			font-size: fluid(40, 60, 0, 576);
+		}
+	}
+
+	&__subtitle-group {
+		display: flex;
+		flex-direction: column;
+
+		span {
+			display: flex;
+			align-items: center;
+			color: $color-text;
+			font-size: 32px;
+			text-transform: uppercase;
+
+			@include max(tl) {
+				font-size: fluid(23, 32, 768, 992);
+			}
+
+			@include max(ti) {
+				font-size: fluid(20, 23, 576, 768);
+			}
+
+			@include max(t) {
+				font-size: fluid(15, 20, 0, 576);
+			}
+		}
+
+		svg {
+			width: 71px;
+			height: 28px;
+			margin-left: 12px;
+
+			@include max(ti) {
+				width: 40px;
+				height: 16px;
+			}
+		}
+	}
+
+	&__borders {
+		position: relative;
+
+		@include max(ti) {
+			opacity: 0;
+			animation: fadeIn 0.3s ease 4.3s forwards;
+		}
+	}
+
+	&__description {
+		padding: 25px 10px 25px 20px;
+		color: $color-description;
+		font-size: 18px;
+
+		@include max(ti) {
+			font-size: fluid(16, 18, 576, 768);
+		}
+
+		@include max(t) {
+			padding: 11px 5px 17px 10px;
+			font-size: fluid(11.5, 16, 0, 576);
+		}
+	}
+
+	&__angle {
+		position: absolute;
+		width: 38px;
+		height: 37px;
+
+		@include max(ti) {
+			width: 18px;
+			height: 18px;
+		}
+
+		&--top-left {
+			top: 0;
+			left: 0;
+		}
+
+		&--top-right {
+			top: 0;
+			right: 0;
+			transform: rotate(90deg);
+		}
+
+		&--bottom-left {
+			bottom: 0;
+			left: 0;
+			transform: rotate(-90deg);
+		}
+
+		&--bottom-right {
+			bottom: 0;
+			right: 0;
+			transform: rotate(-180deg);
+		}
+	}
+
+	&__tabs {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 20px;
+		padding-left: 74px;
+		margin-top: 74px;
+
+		@include max(d) {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 10px;
+			padding-left: 0;
+		}
+
+		@include max(ti) {
+			grid-template-columns: repeat(1, 1fr);
+			gap: 10px;
+			margin-top: 12px;
+		}
+	}
+
+	&__tab {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__tab-button {
+		border: 1px solid $color-border;
+		padding: 10px 28px;
+		font-weight: 500;
+		font-size: 24px;
+		text-align: center;
+		cursor: pointer;
+		transition: 0.3s ease;
+
+		@include max(d) {
+			width: 100%;
+			padding: 10px 15px;
+			font-size: 20px;
+		}
+
+		@include max(ti) {
+			max-width: 51%;
+			padding: fluid(9, 10, 576, 768) 15px;
+			font-size: fluid(16, 24, 576, 768);
+		}
+
+		@include max(t) {
+			padding: fluid(0, 9, 0, 576) 15px;
+			font-size: fluid(11, 16, 0, 576);
+		}
+
+		&:hover {
+			background-color: $color-border;
+		}
+	}
+
+	&__tab-text {
+		color: rgba($color-text, 0.3);
+		font-size: 14px;
+		text-align: center;
+		max-width: 270px;
+		margin-top: 10px;
+
+		@include max(ti) {
+			display: none;
+		}
+	}
+
+	&__tabs-bgs {
+		position: relative;
+		margin-top: -29vw;
+		width: 100%;
+
+		@include max(ti) {
+			margin-top: -86vw;
+		}
+	}
+
+	&__car {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		z-index: 1;
+		transform: translateX(-50%);
+		width: auto;
+
+		@include max(dl) {
+			max-width: 420px;
+		}
+
+		@include max(tl) {
+			max-width: 320px;
+		}
+
+		@include max(ti) {
+			width: fluid(450, 600, 576, 768);
+			max-width: 100%;
+		}
+
+		@include max(t) {
+			width: fluid(70, 450, 0, 576);
+		}
+	}
+
+	&__bg {
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+			width: 100%;
+			height: 10%;
+			background: linear-gradient(0deg,rgba(13, 14, 25, 1) 0%, rgba(13, 14, 25, 0.9) 13%, rgba(13, 14, 25, 0) 100%);
+		}
+	}
+
+	&__tabs-bg {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+
+		@include max(ti) {
+			display: none;
+		}
+	}
+
+	&__tabs-bg-image {
+		width: 100%;
+		opacity: 1;
+		pointer-events: none;
+		transition: 0.3s ease;
+	}
+}

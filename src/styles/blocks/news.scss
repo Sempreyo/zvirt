@@ -1,0 +1,69 @@
+.news {
+	padding: 68px 0 100px;
+
+	@include max(tl) {
+		padding: 50px 0 60px;
+	}
+
+	@include max(ti) {
+		padding: 37px 0 60px;
+	}
+
+	&__title {
+		font-family: $thirdFont;
+		color: $white;
+		font-weight: 500;
+		font-size: 52px;
+		line-height: 1;
+		padding-left: 27px;
+
+		@include max(ti) {
+			font-size: fluid(40, 52, 576, 768);
+			padding-left: 0;
+		}
+
+		@include max(t) {
+			font-size: fluid(22, 40, 0, 576);
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		margin-top: 51px;
+
+		@include max(ti) {
+			margin-top: 30px;
+		}
+	}
+
+	&__all {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 30px;
+
+		@include max(ti) {
+			justify-content: flex-start;
+			margin-top: 17px;
+		}
+	}
+
+	&__all-link {
+		color: $white;
+		font-size: 18px;
+		transition: 0.3s ease;
+
+		@include max(ti) {
+			font-size: fluid(16, 18, 576, 768);
+		}
+
+		@include max(t) {
+			font-size: fluid(11.5, 16, 0, 576);
+		}
+
+		&:hover {
+			color: rgba($white, 0.7);
+		}
+	}
+}

@@ -1,0 +1,95 @@
+extends ../layouts/default
+
+block vars
+	-
+		const page = {
+			title: 'Zvirt'
+		};
+
+block main
+	section.hero
+		.container.container--small.hero__container
+			.hero__top
+				.hero__top-column
+					h1.hero__title Формула zVirt:
+					.hero__subtitle.d-none-mobile-flex
+						.hero__digit 3
+						.hero__subtitle-group
+							span
+								| базовых трека
+								+icon('arrows')
+							span для виртуализации
+				.hero__top-column
+					.hero__subtitle.d-none-desktop-flex
+						.hero__digit 3
+						.hero__subtitle-group
+							span
+								| базовых трека
+								+icon('arrows')
+							span для виртуализации
+					.hero__borders
+						+icon('angle')(class='hero__angle hero__angle--top-left')
+						+icon('angle')(class='hero__angle hero__angle--top-right')
+						+icon('angle')(class='hero__angle hero__angle--bottom-left')
+						+icon('angle')(class='hero__angle hero__angle--bottom-right')
+						.hero__description
+							span.d-none-mobile.
+								«Правило трёх» для разработки Orion soft — это стабильность, простота установки и эксплуатации, безопасность.
+								Эти три пути — ключевые трассы в дорожной карте развития решений и их основные преимущества.
+							span.d-none-desktop.
+								«Правило трёх» для разработки Orion soft — это ключевые трассы в&nbsp;дорожной карте развития
+								решений и их основные преимущества.
+		.container.container--medium.hero__container
+			.hero__tabs
+				.hero__tab
+					.hero__tab-button Простота
+					.hero__tab-text UI/UX, понятный с&nbsp;первого <br> знакомства с&nbsp;продуктом
+				.hero__tab
+					.hero__tab-button Стабильность
+					.hero__tab-text Надежность работы ИТ-инфраструктуры даже при крупных нагрузках
+				.hero__tab
+					.hero__tab-button Безопасность
+					.hero__tab-text Защита чувствительных бизнес-данных на высшем уровне
+		.hero__tabs-bgs
+			.hero__car
+				+picture('car', 'png')
+			.hero__bg
+				+picture('road-main', 'png', '', '', '', 'road-main-mob')(class='hero__tabs-bg-image')
+				.hero__tabs-bg
+					+picture('road-1', 'png')(class='hero__tabs-bg-image')
+				.hero__tabs-bg
+					+picture('road-2', 'png')(class='hero__tabs-bg-image')
+				.hero__tabs-bg
+					+picture('road-3', 'png')(class='hero__tabs-bg-image')
+	section.news
+		.container.news__container
+			h1.news__title Новости продукта
+			.news__list
+				a.news-item(href='#', target='_blank')
+					h2.news-item__title Orion soft выявил пределы zVirt в ходе нагрузочного тестирования
+					.news-item__link
+						+icon('arrow-link')(width='16', height='12')
+				a.news-item(href='#', target='_blank')
+					h2.news-item__title Максим Березин: Использование VMware становится все опаснее для российских заказчиков
+					.news-item__link
+						+icon('arrow-link')(width='16', height='12')
+				a.news-item(href='#', target='_blank')
+					h2.news-item__title Orion soft рассказал о результатах программы поиска уязвимостей в zVirt на Standoff Bug Bounty
+					.news-item__link
+						+icon('arrow-link')(width='16', height='12')
+				a.news-item(href='#', target='_blank')
+					h2.news-item__title VDI в zVirt: в платформу добавили модуль для управления виртуальными рабочими столами
+					.news-item__link
+						+icon('arrow-link')(width='16', height='12')
+			.news__all
+				a.news__all-link(href='#', target='_blank') Все новости на сайте →
+	section.about
+		.container.about__container
+			.about__banner
+				.about__content
+					.about__logo
+						+icon('logo-zvirt')
+					.about__text Узнайте больше о возможностях <br> и преимуществах zVirt
+					+button('перейти', true, 'about__link', '#')
+				a.about__image(href='#', target='_blank')
+					+picture('banner', 'png', '', '', 'banner-mob')

@@ -1,0 +1,305 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+html {
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-o-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	font-family: $mainFont;
+	background-color: $color-background;
+	color: $color-text;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 1.2;
+
+	/* iOS fix */
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	-webkit-locale: auto;
+	white-space: normal;
+}
+
+main {
+	position: relative;
+	z-index: 1;
+}
+
+section {
+	transition: opacity 1s ease;
+}
+
+a {
+	color: $color-text;
+	text-decoration: none;
+}
+
+svg {
+	width: auto;
+	height: auto;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+button {
+	-webkit-appearance: none;
+}
+
+input,
+button,
+select,
+textarea {
+	font: inherit;
+	background-color: transparent;
+	border: 0;
+	border-radius: 0;
+	outline: 0;
+}
+
+input,
+textarea {
+	padding: 0;
+	margin: 0;
+
+	&:focus::placeholder {
+		opacity: 0;
+	}
+}
+
+ul,
+ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.d-none-desktop {
+	display: none !important;
+
+	@include max(ti) {
+		display: block !important;
+	}
+}
+
+.d-none-mobile {
+	display: block !important;
+
+	@include max(ti) {
+		display: none !important;
+	}
+}
+
+.d-none-desktop-flex {
+	display: none !important;
+
+	@include max(ti) {
+		display: flex !important;
+	}
+}
+
+.d-none-mobile-flex {
+	display: flex !important;
+
+	@include max(ti) {
+		display: none !important;
+	}
+}
+
+.hide {
+	opacity: 0 !important;
+}
+
+/* When hystmodal opened */
+.hystmodal__opened .header {
+	transform: translateY(-100%);
+}
+
+/* Swiper */
+.swiper-nav {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 10;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	pointer-events: none;
+
+	@include max(ti) {
+		display: none;
+	}
+
+	.swiper-btn-prev,
+	.swiper-btn-next {
+		position: relative;
+		cursor: pointer;
+		pointer-events: auto;
+
+		&:hover svg {
+			color: rgba($color-main, 0.7);
+		}
+
+		svg {
+			color: $color-main;
+			transition: 0.3s ease;
+		}
+	}
+}
+
+.swiper-pagination {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 36px;
+
+	@include max(tl) {
+		gap: 20px;
+	}
+
+	@include max(ti) {
+		gap: 10px;
+	}
+
+	&__bullet {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 94px;
+		height: 94px;
+		background: transparent;
+		opacity: 1;
+		border-radius: 28px;
+		border: 4px solid $color-main;
+		cursor: pointer;
+		transition: 0.3s ease;
+
+		@include max(tl) {
+			width: 70px;
+			height: 70px;
+			border-radius: 24px;
+		}
+
+		@include max(ti) {
+			width: 50px;
+			height: 50px;
+			border-radius: 18px;
+			border: 2px solid $color-main;
+		}
+
+		&:hover {
+			background-color: $color-main;
+
+			svg {
+				color: $white;
+			}
+		}
+
+		svg {
+			color: $color-main;
+			width: 75%;
+			height: 75%;
+			transition: 0.3s ease;
+		}
+
+		&--active {
+			background-color: $color-main;
+
+			svg {
+				color: $white;
+			}
+		}
+	}
+
+	.swiper-pagination-bullet-active {
+		width: 94px;
+		height: 94px;
+	}
+}
+
+/* Adv mark article */
+.token-mark-block {
+	position: relative;
+	z-index: 20;
+	display: block;
+    max-width: 1288px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 30px auto 0;
+    box-sizing: border-box;
+}
+
+.article-mark {
+	&:hover + .token-info {
+		opacity: 1;
+		pointer-events: auto;
+	}
+}
+
+.token-info {
+	position: absolute;
+	left: 0;
+	bottom: 100%;
+	width: 270px;
+	border: 2px solid $white;
+	background: rgba($color-main, 0.7);
+	backdrop-filter: blur(11px);
+	border-radius: 2px;
+	padding: 20px 10px;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.3s ease;
+}
+
+.token-info-item {
+	display: block;
+	color: $white;
+	font-size: 12px;
+	line-height: 1.2;
+
+	a {
+		color: $white;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

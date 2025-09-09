@@ -1,0 +1,44 @@
+.button {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 11px;
+	background-color: $color-border;
+	clip-path: polygon(0 0, 90% 0, 100% 30%, 100% 100%, 0 100%);
+	color: $color-text;
+	font-weight: 400;
+	font-size: 12px;
+	text-transform: uppercase;
+	transition: 0.3s ease;
+
+	@include max(ti) {
+		gap: 8px;
+		padding: 9px;
+		font-size: fluid(10, 12, 576, 768);
+	}
+
+	@include max(t) {
+		gap: 5px;
+		padding: 7px;
+		font-size: fluid(4, 10, 0, 576);
+	}
+
+	&:hover {
+		background-color: rgba($color-border, 0.7);
+	}
+
+	svg {
+		width: 16px;
+		height: 12px;
+
+		@include max(ti) {
+			width: 12px;
+			height: 9px;
+		}
+
+		@include max(t) {
+			width: 9px;
+			height: 7px;
+		}
+	}
+}

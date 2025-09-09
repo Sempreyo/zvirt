@@ -1,0 +1,53 @@
+extends ../layouts/default-track
+
+block vars
+	-
+		const page = {
+			title: 'Простота'
+		};
+
+block main
+	section.track
+		.container.track__container
+			.track__bg
+				+picture('track-1', 'jpg', 'track__bg-image')
+			.carousel
+				.carousel__swiper.swiper
+					.swiper-wrapper
+						.carousel__slide.swiper-slide
+							.carousel__top
+								.carousel__col
+									.carousel__count 1/7
+									.carousel__title Конвертация
+								.carousel__col
+									.carousel__logo
+							.carousel__content
+								.carousel__text
+									p.
+										Раньше перенос виртуальных машин из исходной площадки в целевую приносил ИТ-отделу много проблем – подключать
+										их приходилось одну за другой вручную, а процесс конвертации мог занимать несколько часов. <span>С помощью конвертера,
+										встроенного в zVirt</span>, переносить и переключать вычислительные машины можно параллельно, а&nbsp;конвертация
+										занимает <span>5-7 минут</span>.
+								.carousel__image
+									+picture('carousel/1', 'png')
+						.carousel__slide.swiper-slide
+							.carousel__top
+								.carousel__col
+									.carousel__count 2/7
+									.carousel__title Михаил Комстачев
+									.carousel__subtitle директор по инфраструктуре и поддержке ИТ-сервисов
+								.carousel__col
+									.carousel__logo
+							.carousel__content
+								.carousel__text
+									p.
+										«Среди функциональности zVirt особенно актуальным для нас оказался мигратор с VMware. В нашем случае речь идет
+										о тысячах виртуальных машин, и на механическую работу по их пересозданию мы потратили бы слишком много ресурсов»
+									+button('читать кейс', true, '' , '#')
+						.carousel__slide.swiper-slide
+				.carousel__nav.swiper-nav
+					.swiper-btn-prev
+						+icon('chevron-left')(width='28', height='62')
+					.swiper-btn-next
+						+icon('chevron-right')(width='28', height='62')
+				.carousel__pagination.swiper-pagination
