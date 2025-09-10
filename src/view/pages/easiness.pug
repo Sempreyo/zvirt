@@ -15,36 +15,42 @@ block main
 				.carousel__swiper.swiper
 					.swiper-wrapper
 						.carousel__slide.swiper-slide
-							.carousel__top
-								.carousel__col
-									.carousel__count 1/7
-									.carousel__title Конвертация
-								.carousel__col
-									.carousel__logo
-							.carousel__content
-								.carousel__text
-									p.
-										Раньше перенос виртуальных машин из исходной площадки в целевую приносил ИТ-отделу много проблем – подключать
-										их приходилось одну за другой вручную, а процесс конвертации мог занимать несколько часов. <span>С помощью конвертера,
-										встроенного в zVirt</span>, переносить и переключать вычислительные машины можно параллельно, а&nbsp;конвертация
-										занимает <span>5-7 минут</span>.
-								.carousel__image
-									+picture('carousel/1', 'png')
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 1/7
+										.carousel__title Конвертация
+									.carousel__col
+										.carousel__logo
+								.carousel__content
+									.carousel__text
+										p.
+											Раньше перенос виртуальных машин из исходной площадки в целевую приносил ИТ-отделу много проблем – подключать
+											их приходилось одну за другой вручную, а процесс конвертации мог занимать несколько часов. <span>С помощью конвертера,
+											встроенного в zVirt</span>, переносить и переключать вычислительные машины можно параллельно, а&nbsp;конвертация
+											занимает <span>5-7 минут</span>.
+									.carousel__image-wrapper
+										+picture('carousel/1', 'jpg', 'carousel__image')
 						.carousel__slide.swiper-slide
-							.carousel__top
-								.carousel__col
-									.carousel__count 2/7
-									.carousel__title Михаил Комстачев
-									.carousel__subtitle директор по инфраструктуре и поддержке ИТ-сервисов
-								.carousel__col
-									.carousel__logo
-							.carousel__content
-								.carousel__text
-									p.
-										«Среди функциональности zVirt особенно актуальным для нас оказался мигратор с VMware. В нашем случае речь идет
-										о тысячах виртуальных машин, и на механическую работу по их пересозданию мы потратили бы слишком много ресурсов»
-									+button('читать кейс', true, '' , '#')
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 2/7
+										.carousel__title Михаил Комстачев
+										.carousel__subtitle директор по инфраструктуре и поддержке ИТ-сервисов
+									.carousel__col
+										.carousel__logo
+											+icon('company-pochtabank')(width='99', height='47')
+								.carousel__content
+									.carousel__text
+										p.
+											«Среди функциональности zVirt особенно актуальным для нас оказался мигратор с VMware. В&nbsp;нашем случае речь идет
+											о тысячах виртуальных машин, и на механическую работу по их пересозданию мы потратили бы слишком много ресурсов»
+										+button('читать кейс', true, 'carousel__link' , '#')
+									.carousel__image-wrapper
+										+picture('carousel/2', 'jpg', 'carousel__image')
 						.carousel__slide.swiper-slide
+							.carousel__slide-inner
 				.carousel__nav.swiper-nav
 					.swiper-btn-prev
 						+icon('chevron-left')(width='28', height='62')
