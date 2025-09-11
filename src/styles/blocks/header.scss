@@ -9,6 +9,76 @@
 		padding: 27px 0 12px;
 	}
 
+	&--tracks {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+		width: 100%;
+		padding: 21px 0;
+
+		@include max(ti) {
+			display: block;
+		}
+
+		#{$parent} {
+			&__container {
+				@include max(ti) {
+					align-items: center;
+				}
+			}
+
+			&__track {
+				font-weight: 500;
+				letter-spacing: 1.3px;
+
+				@include max(ti) {
+					font-size: fluid(14, 16, 576, 768);
+				}
+
+				@include max(t) {
+					font-size: fluid(10, 14, 0, 576);
+				}
+			}
+
+			&__burger {
+				position: relative;
+				width: 36px;
+				height: 24px;
+
+				span {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					transform: translateY(-50%);
+					display: block;
+					width: 100%;
+					height: 2px;
+					background-color: $color-text;
+
+					&::before,
+					&::after {
+						content: "";
+						position: absolute;
+						display: block;
+						width: 100%;
+						height: 2px;
+						background-color: $color-text;
+						transition: 0.3s ease;
+					}
+
+					&::before {
+						top: -10px;
+					}
+
+					&::after {
+						bottom: -10px;
+					}
+				}
+			}
+		}
+	}
+
 	&__container {
 		display: flex;
 		align-items: center;

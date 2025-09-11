@@ -7,7 +7,32 @@ block vars
 		};
 
 block main
+	header.header.header--tracks
+		.container.header__container
+			.header__track /трек: простота
+			.header__burger
+				span
+		.header__menu.menu
+			.menu__close
+				+icon('close')(width='14', height='15')
+			.container.menu__container
+				a.menu__link.menu__link--active(href='#')
+					span ПРОСТОТА
+					+icon('chevron-down')(width='18', height='10')
+				a.menu__link(href='#')
+					span бЕЗОПАСНОСТЬ
+				a.menu__link(href='#')
+					span СТАБИЛЬНОСТЬ
 	section.track
+		.event
+			a.event__link(href='#', target='_blank')
+			.event__close
+				+icon('close')(width='14', height='15')
+			.event__image
+				+picture('event', 'png')
+			.event__content
+				.event__title Orion digital day
+				.event__description Ежегодная ИТ-конференция 25 сентября 2025
 		.container.track__container
 			.track__bg
 				+picture('track-1', 'jpg', 'track__bg-image')
@@ -20,15 +45,15 @@ block main
 									.carousel__col
 										.carousel__count 1/7
 										.carousel__title Конвертация
-									.carousel__col
-										.carousel__logo
 								.carousel__content
 									.carousel__text
 										p.
-											Раньше перенос виртуальных машин из исходной площадки в целевую приносил ИТ-отделу много проблем – подключать
-											их приходилось одну за другой вручную, а процесс конвертации мог занимать несколько часов. <span>С помощью конвертера,
-											встроенного в zVirt</span>, переносить и переключать вычислительные машины можно параллельно, а&nbsp;конвертация
+											Раньше перенос виртуальных машин из исходной площадки в&nbsp;целевую приносил ИТ-отделу много проблем – подключать
+											их&nbsp;приходилось одну за другой вручную, а процесс конвертации мог занимать несколько часов. <span>С&nbsp;помощью конвертера,
+											встроенного в zVirt</span>, переносить и&nbsp;переключать вычислительные машины можно параллельно, а&nbsp;конвертация
 											занимает <span>5-7 минут</span>.
+										.carousel__image-wrapper.carousel__image-wrapper--tablet
+											+picture('carousel/1', 'jpg', 'carousel__image')
 									.carousel__image-wrapper
 										+picture('carousel/1', 'jpg', 'carousel__image')
 						.carousel__slide.swiper-slide
@@ -46,14 +71,120 @@ block main
 										p.
 											«Среди функциональности zVirt особенно актуальным для нас оказался мигратор с VMware. В&nbsp;нашем случае речь идет
 											о тысячах виртуальных машин, и на механическую работу по их пересозданию мы потратили бы слишком много ресурсов»
+										.carousel__image-wrapper.carousel__image-wrapper--tablet
+											+picture('carousel/2', 'jpg', 'carousel__image')
 										+button('читать кейс', true, 'carousel__link' , '#')
 									.carousel__image-wrapper
 										+picture('carousel/2', 'jpg', 'carousel__image')
 						.carousel__slide.swiper-slide
 							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 3/7
+										.carousel__title Николай Близнюк
+										.carousel__subtitle руководитель управления информационной вычислительной инфраструктуры
+									.carousel__col
+										.carousel__logo
+											+icon('company-oteko')(width='110', height='36')
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											«При выборе решения для нас были важны не только количественные характеристики, но и простота внедрения,
+											качество технической поддержки и удобный интерфейс, который оказался максимально понятным и схожим с
+											привычным нам интерфейсом западных продуктов»
+										+button('читать кейс', true, 'carousel__link' , '#')
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 4/7
+										.carousel__title Максим Березин
+										.carousel__subtitle директор по развитию бизнеса
+									.carousel__col
+										.carousel__logo
+											+icon('company-orion')(width='60', height='38')
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											«После импортозамещения виртуализации компании продолжают развивать инфраструктуру: внедряют контейнеризацию,
+											строят частное облако, масштабируют инсталляции. “Вокруг” виртуализации появляется все больше задач, которые
+											решаются объединением возможностей разного ПО. Поэтому мы идем по пути экосистемы глубоко интегрированных
+											решений. В ее основе zVirt как база ИТ-инфраструктуры, а для тех, у&nbsp;кого есть комплексные задачи, мы
+											разработали дополнительные модули»
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 5/7
+										.carousel__title <span>zVirt Containers:</span> простое управление VM <br> и контейнерами «из единого окна»
+								.carousel__content
+									.carousel__text
+										p.
+											Модуль zVirt Containers основан на глубокой интеграции с нашим оркестратором Nova Container Platform. Он поможет
+											выполнить те же задачи, что&nbsp;раньше закрывал продукт VMware Tanzu.
+										.carousel__image-wrapper.carousel__image-wrapper--tablet
+											.t-video-lazyload(data-videolazy-load='true' data-blocklazy-id='1279239021' data-videolazy-type='kinescope' data-videolazy-id='niE6Ag17vYPG2yRD6M4uFL' data-videolazy-height='auto' style='height: auto;')
+												iframe#kinescopeiframe1279239021(src='https://kinescope.io/embed/niE6Ag17vYPG2yRD6M4uFL' width='100%' height='auto' frameborder='0' scrolling='no' allow='fullscreen; picture-in-picture; encrypted-media;' style='height: auto;')
+										+button('Узнать больше о модуле', true, 'carousel__link' , '#')
+									.carousel__image-wrapper
+										.t-video-lazyload(data-videolazy-load='true' data-blocklazy-id='1279239021' data-videolazy-type='kinescope' data-videolazy-id='niE6Ag17vYPG2yRD6M4uFL' data-videolazy-height='auto' style='height: auto;')
+											iframe#kinescopeiframe1279239021(src='https://kinescope.io/embed/niE6Ag17vYPG2yRD6M4uFL' width='100%' height='auto' frameborder='0' scrolling='no' allow='fullscreen; picture-in-picture; encrypted-media;' style='height: auto;')
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 6/7
+										.carousel__title <span>zVirt Metrics:</span> мониторинг и аналитика данных из распределенных инсталляций zVirt
+								.carousel__content
+									.carousel__text
+										p.
+											Модуль zVirt Metrics позволяет автоматизировать сбор данных по более чем 140 показателям, выявлять неэффективное
+											использование ресурсов и оптимизировать их распределение.
+										.carousel__image-wrapper.carousel__image-wrapper--tablet
+											.t-video-lazyload(data-videolazy-load='true' data-blocklazy-id='1279239381' data-videolazy-type='kinescope' data-videolazy-id='n7JKquRQMPnn13h4VUBDXn' data-videolazy-height='auto' style='height: auto;')
+												iframe#kinescopeiframe1279239381(src='https://kinescope.io/embed/n7JKquRQMPnn13h4VUBDXn' width='100%' height='auto' frameborder='0' scrolling='no' allow='fullscreen; picture-in-picture; encrypted-media;' style='height: auto;')
+										+button('Узнать больше о модуле', true, 'carousel__link' , '#')
+									.carousel__image-wrapper
+										.t-video-lazyload(data-videolazy-load='true' data-blocklazy-id='1279239381' data-videolazy-type='kinescope' data-videolazy-id='n7JKquRQMPnn13h4VUBDXn' data-videolazy-height='auto' style='height: auto;')
+											iframe#kinescopeiframe1279239381(src='https://kinescope.io/embed/n7JKquRQMPnn13h4VUBDXn' width='100%' height='auto' frameborder='0' scrolling='no' allow='fullscreen; picture-in-picture; encrypted-media;' style='height: auto;')
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 7/7
+										.carousel__title <span>zVirt DC Manager:</span> управление несколькими инсталляциями zVirt
+								.carousel__content
+									.carousel__text
+										p.
+											Модуль zVirt DC Manager интегрирован с Cloudlink и позволяет делить инфраструктуру на папки и проекты,
+											настраивать ролевой доступ и квоты, создавать виртуальные сервисы для заказа через портал самообслуживания.
+											Включает хранилище секретов StarVault и функции zVirt Metrics.
+										.carousel__image-wrapper.carousel__image-wrapper--tablet
+											.t-video-lazyload(data-videolazy-load='true' data-blocklazy-id='1279239861' data-videolazy-type='kinescope' data-videolazy-id='miovkiRKnm5q1A7Pn3UooJ' data-videolazy-height='auto' style='height: auto;')
+												iframe#kinescopeiframe1279239861(src='https://kinescope.io/embed/miovkiRKnm5q1A7Pn3UooJ' width='100%' height='auto' frameborder='0' scrolling='no' allow='fullscreen; picture-in-picture; encrypted-media;' style='height: auto;')
+										+button('Узнать больше о модуле', true, 'carousel__link' , '#')
+									.carousel__image-wrapper
+										.t-video-lazyload(data-videolazy-load='true' data-blocklazy-id='1279239861' data-videolazy-type='kinescope' data-videolazy-id='miovkiRKnm5q1A7Pn3UooJ' data-videolazy-height='auto' style='height: auto;')
+											iframe#kinescopeiframe1279239861(src='https://kinescope.io/embed/miovkiRKnm5q1A7Pn3UooJ' width='100%' height='auto' frameborder='0' scrolling='no' allow='fullscreen; picture-in-picture; encrypted-media;' style='height: auto;')
 				.carousel__nav.swiper-nav
 					.swiper-btn-prev
-						+icon('chevron-left')(width='28', height='62')
+						+icon('chevron-left')
 					.swiper-btn-next
-						+icon('chevron-right')(width='28', height='62')
+						+icon('chevron-right')
 				.carousel__pagination.swiper-pagination
+	footer.footer.footer--tracks
+		a.footer__test(href='#', target='_blank')
+			span Протестировать
+			+icon('logo-zvirt')(width='59', height='13')
+		.footer__nav
+			.container.footer__container
+				.footer__links
+					a.footer__link.footer__link--active(href='#', target='_blank')
+						+icon('track-easiness')(width='25', height='17')
+						span Простота
+					a.footer__link(href='#', target='_blank')
+						+icon('track-stability')(width='17', height='19')
+						span Стабильность
+					a.footer__link(href='#', target='_blank')
+						+icon('track-security')(width='16', height='20')
+						span Безопасность

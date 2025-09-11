@@ -1,0 +1,67 @@
+.event {
+	$parent: &;
+
+	position: fixed;
+	top: 23px;
+	left: 21px;
+	z-index: 5;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	max-width: 270px;
+	padding: 12px 15px 16px 13px;
+	background: rgba(13, 14, 25, 0.6);
+	border-radius: 10px;
+	transform: translateY(-20px);
+	opacity: 0;
+	animation: slideDown 0.3s ease 4s forwards;
+
+	@include max(ti) {
+		display: none;
+	}
+
+	&:hover #{$parent}__image {
+		transform: scale(1.1);
+	}
+
+	&__link {
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+	}
+
+	&__close {
+		position: absolute;
+		top: 6px;
+		right: 8px;
+		z-index: 2;
+		cursor: pointer;
+		transition: 0.3s ease;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
+	&__image {
+		min-width: 40px;
+		max-width: 40px;
+		user-select: none;
+		transition: 0.3s ease;
+	}
+
+	&__title,
+	&__description {
+		font-size: 14px;
+		line-height: 1.2;
+	}
+
+	&__title {
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+
+	&__description {
+
+	}
+}

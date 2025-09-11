@@ -20,6 +20,37 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
+	/* Закрыть попап */
+	const popupEvent = document.querySelector(".event")
+
+	if (popupEvent) {
+		const popupClose = popupEvent.querySelector(".event__close");
+
+		popupClose.addEventListener("click", () => {
+			popupEvent.setAttribute("data-hidden", "true");
+		});
+	}
+
+	const openNav = () => {
+		let bodyState = document.body.getAttribute("data-state");
+
+		if (bodyState === "mobile-menu") {
+			document.body.dataset.state = "";
+		} else {
+			document.body.dataset.state = "mobile-menu";
+		}
+	}
+
+	/* Мобильное меню */
+	const burger = document.querySelector(".header__burger");
+
+	if (burger) {
+		const closeButtonMenu = document.querySelector(".menu__close");
+
+		burger.addEventListener("click", openNav);
+		closeButtonMenu.addEventListener("click", openNav);
+	}
+
 	/* Якори */
 	const anchors = document.querySelectorAll('.anchor');
 

@@ -4,7 +4,7 @@
 	gap: 10px;
 	padding: 11px;
 	background-color: $color-border;
-	clip-path: polygon(0 0, 90% 0, 100% 30%, 100% 100%, 0 100%);
+	clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
 	color: $color-text;
 	font-weight: 400;
 	font-size: 12px;
@@ -14,6 +14,7 @@
 	@include max(ti) {
 		gap: 8px;
 		padding: 9px;
+		clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 0 100%);
 		font-size: fluid(10, 12, 576, 768);
 	}
 

@@ -108,6 +108,10 @@ ol {
 	margin: 0;
 }
 
+[data-hidden] {
+	display: none !important;
+}
+
 .d-none-desktop {
 	display: none !important;
 
@@ -144,6 +148,28 @@ ol {
 	opacity: 0 !important;
 }
 
+/* Mobile-menu */
+[data-state="mobile-menu"] {
+	overflow: hidden;
+
+	.menu {
+		transform: translateX(0);
+		transition: 0.4s ease 0.3s;
+	}
+
+	.header--tracks .header__burger {
+		span {
+			&::before {
+				top: -7px;
+			}
+
+			&::after {
+				bottom: -7px;
+			}
+		}
+	}
+}
+
 /* When hystmodal opened */
 .hystmodal__opened .header {
 	transform: translateY(-100%);
@@ -153,17 +179,23 @@ ol {
 .swiper-nav {
 	position: absolute;
 	top: 50%;
-	left: 0;
-	z-index: 10;
+	left: -80px;
+	right: -80px;
+	z-index: 6;
 	transform: translateY(-50%);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 100%;
 	pointer-events: none;
 
+	@include max(tl) {
+		left: -50px;
+		right: -50px;
+	}
+
 	@include max(ti) {
-		display: none;
+		left: -20px;
+		right: -20px;
 	}
 
 	.swiper-btn-prev,
@@ -173,56 +205,47 @@ ol {
 		pointer-events: auto;
 
 		&:hover svg {
-			color: rgba($color-main, 0.7);
+			color: $color-main;
 		}
 
 		svg {
-			color: $color-main;
+			width: 24px;
+			height: 44px;
+			color: $color-text;
 			transition: 0.3s ease;
+
+			@include max(ti) {
+				width: 11px;
+				height: 20px;
+				color: $color-main;
+			}
 		}
 	}
 }
 
 .swiper-pagination {
 	position: relative;
-	display: flex;
+	z-index: 3;
+	display: none;
 	align-items: center;
 	justify-content: center;
-	gap: 36px;
-
-	@include max(tl) {
-		gap: 20px;
-	}
+	gap: 8px;
 
 	@include max(ti) {
-		gap: 10px;
+		display: flex;
 	}
 
-	&__bullet {
+	&-bullet {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 94px;
-		height: 94px;
-		background: transparent;
+		width: 6px;
+		height: 6px;
+		background: $color-divider;
 		opacity: 1;
-		border-radius: 28px;
-		border: 4px solid $color-main;
+		border-radius: 50%;
 		cursor: pointer;
 		transition: 0.3s ease;
-
-		@include max(tl) {
-			width: 70px;
-			height: 70px;
-			border-radius: 24px;
-		}
-
-		@include max(ti) {
-			width: 50px;
-			height: 50px;
-			border-radius: 18px;
-			border: 2px solid $color-main;
-		}
 
 		&:hover {
 			background-color: $color-main;
@@ -232,25 +255,10 @@ ol {
 			}
 		}
 
-		svg {
-			color: $color-main;
-			width: 75%;
-			height: 75%;
-			transition: 0.3s ease;
-		}
-
-		&--active {
+		&-active {
 			background-color: $color-main;
-
-			svg {
-				color: $white;
-			}
+			transform: scale(1.5);
 		}
-	}
-
-	.swiper-pagination-bullet-active {
-		width: 94px;
-		height: 94px;
 	}
 }
 

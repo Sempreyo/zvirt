@@ -1,6 +1,97 @@
 .footer {
 	$parent: &;
 
+	&--tracks {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+
+		@include max(ti) {
+			display: none;
+		}
+
+		#{$parent} {
+			&__container {
+				display: flex;
+				justify-content: center;
+			}
+
+			&__test {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				background-color: $color-border;
+				padding: 18px 26px;
+				clip-path: polygon(0 15px, 17px 0, calc(100% - 17px) 0, 100% 15px, 100% 100%, 0 100%);
+				font-family: $secondFont;
+				font-size: 17px;
+				transition: 0.3s ease;
+
+				&:hover {
+					background-color: rgba($color-border, 0.7);
+				}
+			}
+
+			&__nav {
+				position: relative;
+				width: 100%;
+				padding: 30px 0;
+
+				&::before {
+					content: "";
+					position: absolute;
+					inset: 0;
+					background: linear-gradient(0, rgba(13, 14, 25, 1) 0%, rgba(29, 31, 47, 1) 100%);
+					opacity: 0.8;
+				}
+			}
+
+			&__links {
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 20px;
+				max-width: 912px;
+				width: 100%;
+			}
+
+			&__link {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				font-family: $secondFont;
+				font-size: 24px;
+				transition: 0.3s ease;
+
+				&:hover {
+					opacity: 0.7;
+				}
+
+				svg {
+					fill: $white;
+					stroke: $white;
+				}
+
+				&--active {
+					span {
+						color: $color-main;
+					}
+
+					svg {
+						fill: $color-main;
+						stroke: $color-main;
+					}
+				}
+			}
+		}
+	}
+
 	&__wrapper {
 		display: flex;
 		align-items: center;
