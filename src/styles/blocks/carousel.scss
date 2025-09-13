@@ -21,6 +21,10 @@
 		@include max(ti) {
 			padding: 40px 0 14px;
 		}
+
+		.swiper-slide {
+			overflow: visible;
+		}
 	}
 
 	&__slide {
@@ -185,6 +189,49 @@
 			span {
 				color: $color-main;
 				font-weight: 500;
+			}
+		}
+	}
+
+	&__lists {
+		display: flex;
+		gap: 8px;
+
+		@include max(tl) {
+			flex-direction: column;
+			gap: 15px;
+		}
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+
+			li {
+				position: relative;
+				padding-left: 18px;
+				font-weight: 300;
+				font-size: 16px;
+				line-height: 1.1;
+
+				@include max(ti) {
+					font-size: fluid(14, 16, 576, 768);
+					line-height: 1.07;
+				}
+
+				@include max(t) {
+					font-size: fluid(10, 14, 0, 576);
+				}
+
+				&::before {
+					content: "";
+					position: absolute;
+					top: 4px;
+					left: 0;
+					width: 8px;
+					height: 8px;
+					background-color: $color-main;
+				}
 			}
 		}
 	}

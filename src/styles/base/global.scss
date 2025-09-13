@@ -49,6 +49,17 @@ body {
 	-o-font-smoothing: antialiased;
 	-webkit-locale: auto;
 	white-space: normal;
+
+	&[data-load] {
+		.header {
+			transform: translateY(-100%);
+		}
+
+		.hero__title,
+		.hero__angle {
+			opacity: 0;
+		}
+	}
 }
 
 main {
@@ -179,8 +190,8 @@ ol {
 .swiper-nav {
 	position: absolute;
 	top: 50%;
-	left: -80px;
-	right: -80px;
+	left: 80px;
+	right: 80px;
 	z-index: 6;
 	transform: translateY(-50%);
 	display: flex;
@@ -188,9 +199,14 @@ ol {
 	justify-content: space-between;
 	pointer-events: none;
 
+	@include max(d) {
+		left: 30px;
+		right: 30px;
+	}
+
 	@include max(tl) {
-		left: -50px;
-		right: -50px;
+		left: 0;
+		right: 0;
 	}
 
 	@include max(ti) {
@@ -230,6 +246,7 @@ ol {
 	align-items: center;
 	justify-content: center;
 	gap: 8px;
+	margin-top: 20px;
 
 	@include max(ti) {
 		display: flex;

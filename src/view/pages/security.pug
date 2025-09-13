@@ -7,5 +7,221 @@ block vars
 		};
 
 block main
-	section.carousel
-		.container
+	header.header.header--tracks
+		.container.header__container
+			.header__track /трек: безопасность
+			.header__burger
+				span
+		.header__menu.menu
+			.menu__close
+				+icon('close')(width='14', height='15')
+			.container.menu__container
+				a.menu__link(href='#')
+					span ПРОСТОТА
+				a.menu__link(href='#')
+					span СТАБИЛЬНОСТЬ
+				a.menu__link.menu__link--active(href='#')
+					span бЕЗОПАСНОСТЬ
+					+icon('chevron-down')(width='18', height='10')
+	section.track
+		.event
+			a.event__link(href='#', target='_blank')
+			.event__close
+				+icon('close')(width='14', height='15')
+			.event__image
+				+picture('event', 'png')
+			.event__content
+				.event__title Orion digital day
+				.event__description Ежегодная ИТ-конференция 25 сентября 2025
+		.container.track__container
+			.track__bg
+				+picture('track-3', 'jpg', 'track__bg-image')
+			.carousel
+				.carousel__swiper.swiper
+					.swiper-wrapper
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 1/9
+										.carousel__title Безопасность на фоне растущих угроз
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											Платформа zVirt разработана на базе oVirt — виртуализации с открытым исходным кодом. В 2024 года она осталась без
+											поддержки разработчика Red Hat, и компании начали сомневаться в безопасности вендорских продуктов, разработанных
+											на базе oVirt. Но zVirt нельзя назвать форком Open Source решения за счет множества собственных доработок вендора,
+											в том числе по безопасности. Среди них переход на отечественное ядро ИСП РАН, самостоятельное обновление значимых
+											компонентов виртуализации, изолированная сборка, шифрование данных, использование DevSecOps-практик, Bug Bounty и другие.
+										+button('читать подробнее', true, 'carousel__link' , '#')
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 2/9
+										.carousel__title Максим Березин
+										.carousel__subtitle директор по развитию бизнеса
+									.carousel__col
+										.carousel__logo
+											+icon('logo-orion')(width='60', height='38')
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											«Использование VMware становится все более рискованным для российских заказчиков. Летом 2025 года стало известно,
+											что вендор блокирует загрузку обновлений по информационной безопасности, в том числе по критическим уязвимостям
+											(например, RCE в vSphere и ESXi) для пользователей с бессрочными лицензиями, если у них нет действующего
+											support-контракта.
+											<br>
+											Продлить поддержку сегодня можно, только...»
+										+button('читать подробнее', true, 'carousel__link' , '#')
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 3/9
+										.carousel__title Виктория Повелицына
+										.carousel__subtitle руководитель бизнес-направления ИТ-инфраструктуры
+									.carousel__col
+										.carousel__logo
+											+icon('logo-nornikel')(width='63', height='52')
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											«Развитие ИТ-систем на отечественных ОС должно сопровождаться размещением на отечественной виртуализации. Кроме того,
+											для нас наличие полноценной поддержки напрямую от вендора — важная часть управления рисками. Мы намерены получить опыт
+											работы zVirt под нагрузкой и развивать отечественные решения в дальнейшем с учетом особенностей нашего ИТ-ландшафта»
+										+button('читать кейс', true, 'carousel__link' , '#')
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 4/9
+										.carousel__title Микросегментация
+									.carousel__col
+										.carousel__logo
+											+icon('company-oteko')(width='110', height='36')
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											Микросегментация позволяет контролировать входящий и исходящий трафики на портах виртуальных машин, дает возможность
+											контроля по IP-адресам, протоколам L3 и L4 и портам. Можно управлять доступом между конкретными машинами, даже
+											находящимися в одной виртуальной сети.
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 5/9
+										.carousel__title Ядро ИСП РАН
+									.carousel__col
+										.carousel__logo
+											+icon('company-yadro')(width='62', height='44')
+								.carousel__content
+									.carousel__text
+										p.
+											zVirt перевели на отечественное ядро Linux 6.1, которое поддерживает центр исследований безопасности ИСП РАН.
+											Разработка ядра на базе ИСП РАН гарантирует высокий урмовень контроля качества и стабильности системы.
+										.carousel__image-wrapper.carousel__image-wrapper--tablet
+											.t-video-lazyload(data-videolazy-load='true' data-blocklazy-id='1279287681' data-videolazy-type='kinescope' data-videolazy-id='sqNFPME7aBPbV2K7YfzmtF' data-videolazy-height='auto' style='height: auto;')
+												iframe#kinescopeiframe1279287681(src='https://kinescope.io/embed/sqNFPME7aBPbV2K7YfzmtF' width='100%' height='auto' frameborder='0' scrolling='no' allow='fullscreen; picture-in-picture; encrypted-media;' style='height: auto;')
+									.carousel__image-wrapper
+										.t-video-lazyload(data-videolazy-load='true' data-blocklazy-id='1279287681' data-videolazy-type='kinescope' data-videolazy-id='sqNFPME7aBPbV2K7YfzmtF' data-videolazy-height='auto' style='height: auto;')
+											iframe#kinescopeiframe1279287681(src='https://kinescope.io/embed/sqNFPME7aBPbV2K7YfzmtF' width='100%' height='auto' frameborder='0' scrolling='no' allow='fullscreen; picture-in-picture; encrypted-media;' style='height: auto;')
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 6/9
+										.carousel__title Что значит, что ПО прошло сертификацию во ФСТЭК?
+								.carousel__content
+									.carousel__lists
+										ul
+											li.
+												Весь исходный код хранится и поддерживается Orion soft. Обеспечена локальная сборка всех компонентов, а также
+												локальное развертывание продуктов
+											li.
+												Компоненты поверхности атаки проходят динамический анализ и фаззинг-тестирования при каждом обновлении.
+											li.
+												Компоненты, реализующие функции безопасности, проходят статический анализ при каждом обновлении и изменении.
+										ul
+											li.
+												Компания проводит регулярный поиск и&nbsp;мероприятия по устранению уязвимостей.
+											li.
+												В продукте реализованы все необходимые меры по обеспечению безопасности.
+											li.
+												Компонентный состав продукта четко задекларирован, что повышает стабильность продукта и минимизирует поверхность атаки.
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 7/9
+										.carousel__title ФСТЭК
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											Сертифицированная редакция zVirt MAX проверена в соответствии с требованиями по безопасности информации и не содержит
+											недекларированных возможностей. В ней реализованы модуль доверенной загрузки виртуальных машин, контроль целостности,
+											регистрация событий безопасности и управление доступом.
+											<br>
+											Также усилены функции резервного копирования, управления потоками информации и защиты памяти, введена идентификация
+											пользователей и установлены ограничения программной среды. Реализованы и меры защиты централизованного управления
+											образами виртуальных машин.
+										+button('читать кейс', true, 'carousel__link' , '#')
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 8/9
+										.carousel__title Александр Гавриленко
+										.carousel__subtitle руководитель проектов по интеграции zVirt в инфраструктурах заказчиков
+									.carousel__col
+										.carousel__logo
+											+icon('logo-orion')(width='60', height='38')
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											«Мы вышли на Standoff Bug Bounty, чтобы повысить уровень безопасности продукта за счет обнаружения и исправления
+											потенциальных уязвимостей, а также повысить уровень безопасности разработки. С ноября 2024 года с помощью белых
+											хакеров было обнаружено 10 уязвимостей. Среди них не было ни одной критической, и только две — высокого уровня.
+											Мы уже исправили наиболее значимые»
+										+button('Читать подробнее', true, 'carousel__link' , '#')
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 9/9
+										.carousel__title Марат Чураков
+										.carousel__subtitle директор по инфраструктуре
+									.carousel__col
+										.carousel__logo
+											+icon('logo-positive')(width='249', height='21')
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											Виртуализация позволяет гибко выделять вычислительные ресурсы, повышая эффективность и масштабируемость организаций.
+											Но при этом она требует и защиты. Чтобы российские производители могли обеспечить безопасную эксплуатацию своих
+											продуктов, необходимо начать с харденинга — усиления безопасности путем изменения настроек в ПО виртуализации.
+											И начинать это делать это мы советуем с помощью руководства по харденингу среды виртуализации zVirt, разработаного
+											совместно Orion soft и Positive Technologies.
+										+button('читать кейс', true, 'carousel__link' , '#')
+				.carousel__nav.swiper-nav
+					.swiper-btn-prev
+						+icon('chevron-left')
+					.swiper-btn-next
+						+icon('chevron-right')
+				.carousel__pagination.swiper-pagination
+	footer.footer.footer--tracks
+		a.footer__test(href='#', target='_blank')
+			span Протестировать
+			+icon('logo-zvirt')(width='59', height='13')
+		.footer__nav
+			.container.footer__container
+				.footer__links
+					a.footer__link(href='#', target='_blank')
+						+icon('track-easiness')(width='25', height='17')
+						span Простота
+					a.footer__link(href='#', target='_blank')
+						+icon('track-stability')(width='17', height='19')
+						span Стабильность
+					a.footer__link.footer__link--active(href='#', target='_blank')
+						+icon('track-security')(width='16', height='20')
+						span Безопасность

@@ -29,3 +29,26 @@
 		opacity: 1;
 	}
 }
+
+@keyframes flicker {
+	0% {
+		opacity: 0.9;
+		filter: brightness(1.2);
+	}
+	25% {
+		opacity: 1;
+		filter: brightness(1.4);
+	}
+	50% {
+		opacity: 0.8;
+		filter: brightness(0.9);
+	}
+	75% {
+		opacity: 0.95;
+		filter: brightness(1.1);
+	}
+	100% {
+		opacity: 1;
+		filter: brightness(1);
+	}
+}

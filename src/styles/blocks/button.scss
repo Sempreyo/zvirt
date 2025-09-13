@@ -24,6 +24,14 @@
 		font-size: fluid(4, 10, 0, 576);
 	}
 
+	&--reverse {
+		flex-direction: row-reverse;
+
+		svg {
+			transform: rotate(180deg);
+		}
+	}
+
 	&:hover {
 		background-color: rgba($color-border, 0.7);
 	}

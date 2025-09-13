@@ -7,5 +7,216 @@ block vars
 		};
 
 block main
-	section.carousel
-		.container
+	header.header.header--tracks
+		.container.header__container
+			.header__track /трек: стабильность
+			.header__burger
+				span
+		.header__menu.menu
+			.menu__close
+				+icon('close')(width='14', height='15')
+			.container.menu__container
+				a.menu__link(href='#')
+					span ПРОСТОТА
+				a.menu__link.menu__link--active(href='#')
+					span СТАБИЛЬНОСТЬ
+					+icon('chevron-down')(width='18', height='10')
+				a.menu__link(href='#')
+					span бЕЗОПАСНОСТЬ
+	section.track
+		.event
+			a.event__link(href='#', target='_blank')
+			.event__close
+				+icon('close')(width='14', height='15')
+			.event__image
+				+picture('event', 'png')
+			.event__content
+				.event__title Orion digital day
+				.event__description Ежегодная ИТ-конференция 25 сентября 2025
+		.container.track__container
+			.track__bg
+				+picture('track-2', 'jpg', 'track__bg-image')
+			.carousel
+				.carousel__swiper.swiper
+					.swiper-wrapper
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 1/9
+										.carousel__title Максим Березин
+										.carousel__subtitle директор по развитию бизнеса
+									.carousel__col
+										.carousel__logo
+											+icon('logo-orion')(width='60', height='38')
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											«Бизнесу не так важны все новые и новые пакеты фич, как то, чтобы система не “разваливалась” на инсталляции от
+											нескольких десятков хостов. Для стабильной работы инфраструктуры мы реализовали повышенную отказоустойчивость
+											Hosted Engine, балансировку нагрузки в кластере виртуалиации по аналогии с функциональностью VMware Storage DRS,
+											возможность репликации на уровне СХД»
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 2/9
+										.carousel__title Повышенная отказоустойчивость Hosted Engine
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											Механизм обеспечивает высокую отказоустойчи-вость узла управления кластером и непрерывность работы системы.
+											Он также гарантирует восстанов-ление Hosted Engine при недоступности хранилища данных или при поврежденных данных
+											с конфигурациями кластера. В случае, если активная виртуальная машина выйдет из строя, работа автоматически
+											переключится на резервную без потери целостности данных.
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 3/9
+										.carousel__title Балансировка нагрузки в кластере виртуализации
+								.carousel__content
+									.carousel__text
+										p.
+											Инструмент «Кластеры хранилищ» аналогично VMware Storage DRS позволяет объединить несколько доменов хранения
+											в логический кластер с возможностью автоматической или ручной балансировки нагрузки по объему данных.
+											Благодаря этой функции компании могут оптимизировать размещение дисков виртуальных машин, предотвратить
+											переполнение доменов хранения и упростить процесс обслуживания ИТ-инфраструктуры.
+										.carousel__image-wrapper.carousel__image-wrapper--tablet
+											.t-video-lazyload(data-videolazy-load='true' data-blocklazy-id='1279139431' data-videolazy-type='kinescope' data-videolazy-id='27NEXLZDvAEHjqh5nzsKnq' data-videolazy-height='auto' style='height: auto;')
+												iframe#kinescopeiframe1279139431(src='https://kinescope.io/embed/27NEXLZDvAEHjqh5nzsKnq' width='100%' height='auto' frameborder='0' scrolling='no' allow='fullscreen; picture-in-picture; encrypted-media;' style='height: auto;')
+									.carousel__image-wrapper
+										.t-video-lazyload(data-videolazy-load='true' data-blocklazy-id='1279139431' data-videolazy-type='kinescope' data-videolazy-id='27NEXLZDvAEHjqh5nzsKnq' data-videolazy-height='auto' style='height: auto;')
+											iframe#kinescopeiframe1279139431(src='https://kinescope.io/embed/27NEXLZDvAEHjqh5nzsKnq' width='100%' height='auto' frameborder='0' scrolling='no' allow='fullscreen; picture-in-picture; encrypted-media;' style='height: auto;')
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 4/9
+										.carousel__title Репликация на уровне гипервизора и СХД
+								.carousel__content
+									.carousel__text
+										p.
+											Управление синхронной репликацией на уровне СХД с возможностью аварийного восстановления реализовано совместно с
+											компанией YADRO. Функция обеспечивает катастрофоустойчивость за счет расширения сервиса Disaster Recovery с
+											использованием механизмов репликации средствами СХД и управлением планами аварийного восстановления ВМ,
+											реплицируемых на уровне СХД.
+										.carousel__image-wrapper.carousel__image-wrapper--tablet
+											.t-video-lazyload(data-videolazy-load='true' data-blocklazy-id='1279139861' data-videolazy-type='kinescope' data-videolazy-id='0T9wM6wsjNupqQDdsDzAux' data-videolazy-height='auto' style='height: auto;')
+												iframe#kinescopeiframe1279139861(src='https://kinescope.io/embed/0T9wM6wsjNupqQDdsDzAux' width='100%' height='auto' frameborder='0' scrolling='no' allow='fullscreen; picture-in-picture; encrypted-media;' style='height: auto;')
+									.carousel__image-wrapper
+										.t-video-lazyload(data-videolazy-load='true' data-blocklazy-id='1279139861' data-videolazy-type='kinescope' data-videolazy-id='0T9wM6wsjNupqQDdsDzAux' data-videolazy-height='auto' style='height: auto;')
+											iframe#kinescopeiframe1279139861(src='https://kinescope.io/embed/0T9wM6wsjNupqQDdsDzAux' width='100%' height='auto' frameborder='0' scrolling='no' allow='fullscreen; picture-in-picture; encrypted-media;' style='height: auto;')
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 5/9
+										.carousel__title Алексей Оглинда
+										.carousel__subtitle ведущий технический менеджер TATLIN.UNIFIED
+									.carousel__col
+										.carousel__logo
+											+icon('company-yadro')(width='62', height='44')
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											«Интеграция аппаратной репликации TATLIN.UNIFIED с zVirt — это готовое решение, которое позволяет восстанавливаться
+											после сбоев всего за несколько минут. Мы даём заказчикам удобный инструмент, который упрощает управление репликацией
+											для администраторов систем хранения данных. Это решение уже доказало свою надежность и стало основой для создания
+											отказоустойчивого кластера»
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 6/9
+										.carousel__title Андрей Крючков
+										.carousel__subtitle директор по развитию технологических партнерств компании
+									.carousel__col
+										.carousel__logo
+											+icon('company-kiberprotect')(width='232', height='15')
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											«Современные требования бизнеса таковы, что резервное копирование должно быть надежным, производительным и при этом
+											незаметным для работы. Именно здесь на помощь приходит технология CBT (Changed Block Tracking). Она позволяет
+											резервировать не весь объём виртуальной машины каждый раз, а только те части, которые изменились.
+											<br>
+											В рамках нашей интеграции с платформой zVirt мы реализовали CBT на глубоком уровне — прямо в гипервизоре. Это
+											значит, что резервное копирование становится не просто надёжным, а ещё и легковесным: не тормозит систему, не
+											перегружает сеть и не требует гигантских хранилищ. Для бизнеса это критически важно: чем быстрее и незаметнее
+											работает защита данных, тем выше готовность к сбоям и атакам»
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 7/9
+										.carousel__title Никита Шамрай
+										.carousel__subtitle руководитель ИТ-блока банка ПСБ
+									.carousel__col
+										.carousel__logo
+											+picture('logo-psb', 'png')(width='138', height='55')
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											«ПСБ в рамках реализуемой стратегии по импортозамещению продолжает оптимизировать собственные бизнес-процессы и
+											переходить на российские разработки. Отечественное решение позволяет сохранить высокий уровень информационной
+											безопасности и отказоустойчивости, соответствующий всем требованиям надежности. Благодаря бесшовному процессу
+											миграции, клиенты совершают все операции в привычном режиме, не замечая никаких изменений»
+										+button('читать кейс', true, 'carousel__link' , '#')
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 8/9
+										.carousel__title Александр Гавриленко
+										.carousel__subtitle новая должность Orion soft:
+									.carousel__col
+										.carousel__logo
+											+icon('logo-orion')(width='60', height='38')
+								.carousel__content
+									.carousel__text.carousel__text--full
+										p.
+											«Нагрузочное тестирование zVirt подтвердило, что под одним Hosted Engine может стабильно работать инсталляция до
+											3500 хостов, а также могут одновременно функционировать до 21 000 виртуальных машин. Эти результаты подкрепляются
+											наличием крупных инсталляций у наших заказчиков. Например, в ПСБ под одним Hosted Engine работает инсталляция zVirt
+											из более чем 1200 хостов»
+										+button('Читать подробнее', true, 'carousel__link' , '#')
+						.carousel__slide.swiper-slide
+							.carousel__slide-inner
+								.carousel__top
+									.carousel__col
+										.carousel__count 9/9
+										.carousel__title Репликация на уровне гипервизора и DR
+								.carousel__content
+									.carousel__text
+										p.
+											Данные между сайтами репликации передаются по технология снимков виртуальных машин. После первоначального полного
+											копирования данных дальше передаются только инкрементальные изменения с предыдущего снимка, что позволяет эффективно
+											использовать пропускную способность канала связи. Этот тип репликации аппаратно-независим и не привязан к конкретному
+											типу или модели системы хранения данных.
+										.carousel__image-wrapper.carousel__image-wrapper--tablet
+											+picture('carousel/3', 'jpg', 'carousel__image')
+									.carousel__image-wrapper
+										+picture('carousel/3', 'jpg', 'carousel__image')
+				.carousel__nav.swiper-nav
+					.swiper-btn-prev
+						+icon('chevron-left')
+					.swiper-btn-next
+						+icon('chevron-right')
+				.carousel__pagination.swiper-pagination
+	footer.footer.footer--tracks
+		a.footer__test(href='#', target='_blank')
+			span Протестировать
+			+icon('logo-zvirt')(width='59', height='13')
+		.footer__nav
+			.container.footer__container
+				.footer__links
+					a.footer__link(href='#', target='_blank')
+						+icon('track-easiness')(width='25', height='17')
+						span Простота
+					a.footer__link.footer__link--active(href='#', target='_blank')
+						+icon('track-stability')(width='17', height='19')
+						span Стабильность
+					a.footer__link(href='#', target='_blank')
+						+icon('track-security')(width='16', height='20')
+						span Безопасность

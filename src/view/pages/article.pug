@@ -1,0 +1,36 @@
+extends ../layouts/default-track
+
+block vars
+	-
+		const page = {
+			title: 'Статья'
+		};
+
+block main
+	section.article
+		.container.article__container
+			.article__bg
+				+picture('track-2', 'jpg', 'article__bg-image')
+			.article__top
+				+button('ВЕРНУТЬСЯ НА ГЛАВНУЮ', true, 'button--reverse article__button', '#')
+				a.article__top-link(href='#', target='_blank')
+					+picture('article-link', 'png')
+			.article-content
+				.article-content__inner
+					.article-content__top
+						.article-content__col
+							.article-content__track
+								+icon('track-stability')(width='17', height='19')
+								span Стабильность
+							h1.article-content__title Заголовок
+							.article-content__subtitle Должность при наличии
+						.article-content__col
+							.article-content__logo
+								+icon('company-pochtabank')(width='150', height='71')
+					.article-content__main
+						p.
+							«Среди функциональности zVirt особенно актуальным для нас оказался мигратор с VMware.. В нашем случае речь идет о тысячах
+							виртуальных машин, и на механическую работу по их пересозданию мы потратили бы слишком много ресурсов» «Среди функциональности
+							zVirt особенно актуальным для нас оказался мигратор с VMware. В нашем случае речь идет о тысячах виртуальных машин, и на
+							механическую работу по их пересозданию мы потратили бы слишком много ресурсов»  В нашем случае речь идет о тысячах виртуальных
+							машин, и на механическую работу по их пересозданию мы потратили бы слишком много ресурсов»

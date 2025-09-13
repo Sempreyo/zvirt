@@ -1,0 +1,262 @@
+.article-content {
+	position: relative;
+	max-width: 1000px;
+	height: auto;
+	margin: 0 auto;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		inset: 0;
+		background-color: rgba(26, 149, 74, 0.6);
+		filter: blur(16px);
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		border: 1px solid $color-border;
+		background: linear-gradient(0deg, #0d0E19 0%, #1D1F2F 100%);
+		clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);
+	}
+
+	&__inner {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		padding: 60px;
+		box-sizing: border-box;
+
+		@include max(ti) {
+			padding: 30px;
+		}
+
+		@include max(t) {
+			padding: 30px 20px;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			top: -6px;
+			right: 15px;
+			z-index: 2;
+			width: 1px;
+			height: 42px;
+			background-color: $color-border;
+			transform: rotate(-45deg);
+		}
+	}
+
+	&__top,
+	&__main {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__top {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 20px;
+
+		@include max(ti) {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 10px;
+		}
+	}
+
+	&__track {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		font-family: $secondFont;
+		color: $color-main;
+		font-size: 24px;
+
+		@include max(tl) {
+			font-size: fluid(20, 24, 768, 992);
+		}
+
+		@include max(ti) {
+			font-size: fluid(16, 20, 576, 768);
+		}
+
+		@include max(t) {
+			font-size: fluid(12, 16, 0, 576);
+		}
+
+		svg {
+			color: $color-main;
+			fill: $color-main;
+			stroke: $color-main;
+		}
+	}
+
+	&__title {
+		font-weight: 500;
+		font-size: 36px;
+		line-height: 1.3;
+		margin-top: 20px;
+
+		@include max(tl) {
+			font-size: fluid(32, 36, 768, 992);
+		}
+
+		@include max(ti) {
+			font-size: fluid(26, 32, 576, 768);
+		}
+
+		@include max(t) {
+			font-size: fluid(20, 26, 0, 576);
+		}
+	}
+
+	&__subtitle {
+		font-size: 20px;
+
+		@include max(tl) {
+			font-size: fluid(18, 20, 768, 992);
+		}
+
+		@include max(ti) {
+			font-size: fluid(16, 18, 576, 768);
+		}
+
+		@include max(t) {
+			font-size: fluid(12, 16, 0, 576);
+		}
+	}
+
+	&__main {
+		margin-top: 27px;
+
+		h2 {
+			font-size: 30px;
+
+			@include max(tl) {
+				font-size: fluid(26, 30, 768, 992);
+			}
+
+			@include max(ti) {
+				font-size: fluid(24, 26, 576, 768);
+			}
+
+			@include max(t) {
+				font-size: fluid(16, 24, 0, 576);
+			}
+
+			& + p {
+				margin-top: 20px;
+
+				@include max(ti) {
+					margin-top: 10px;
+				}
+			}
+		}
+
+		p {
+			font-size: 24px;
+			line-height: 1.1;
+
+			@include max(tl) {
+				font-size: fluid(20, 24, 768, 992);
+			}
+
+			@include max(ti) {
+				font-size: fluid(16, 20, 576, 768);
+			}
+
+			@include max(t) {
+				font-size: fluid(12, 16, 0, 576);
+			}
+
+			& + p,
+			& + ul {
+				margin-top: 20px;
+
+				@include max(ti) {
+					margin-top: 10px;
+				}
+			}
+
+			& + h2 {
+				margin-top: 40px;
+
+				@include max(ti) {
+					margin-top: 20px;
+				}
+			}
+		}
+
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+
+			& + p {
+				margin-top: 20px;
+
+				@include max(ti) {
+					margin-top: 10px;
+				}
+			}
+
+			& + h2 {
+				margin-top: 40px;
+
+				@include max(ti) {
+					margin-top: 20px;
+				}
+			}
+
+			li {
+				position: relative;
+				padding-left: 18px;
+				font-size: 24px;
+				line-height: 1.1;
+
+				@include max(tl) {
+					font-size: fluid(20, 24, 768, 992);
+				}
+
+				@include max(ti) {
+					font-size: fluid(16, 20, 576, 768);
+				}
+
+				@include max(t) {
+					font-size: fluid(12, 16, 0, 576);
+				}
+
+				&::before {
+					content: "";
+					position: absolute;
+					top: 10px;
+					left: 0;
+					width: 8px;
+					height: 8px;
+					background-color: $color-main;
+
+					@include max(tl) {
+						top: fluid(8, 10, 768, 992);
+					}
+
+					@include max(ti) {
+						top: fluid(6, 8, 576, 768);
+					}
+
+					@include max(t) {
+						top: fluid(2, 6, 0, 576);
+					}
+				}
+			}
+		}
+	}
+}

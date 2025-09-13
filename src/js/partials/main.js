@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const mobile = window.matchMedia("(width >= 768px)");
+	const desktop = window.matchMedia("(width >= 1280px)");
+
+	document.body.removeAttribute("data-load");
 
 	/* Анимация трассы на главной */
 	const sectionHero = document.querySelector(".hero");
@@ -18,6 +21,31 @@ document.addEventListener("DOMContentLoaded", () => {
 				tabsContent.forEach(el => el.classList.remove("hide"));
 			});
 		});
+	}
+
+	/* Разделить строку на символы */
+	const hero = document.querySelector(".hero");
+	if (hero && desktop.matches) {
+		const splitText = new SplitType(".hero__title", {
+			types: "chars"
+		});
+
+		/* Анимация появления символов */
+		const heroObserver = new IntersectionObserver((entries, observer) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					const chars = document.querySelectorAll(".hero__title .char");
+
+					chars.forEach((el, index) => {
+						setTimeout(() => {
+							el.style.transform = 'translateY(0)';
+						}, 50 * index);
+					});
+				}
+			});
+		});
+
+		heroObserver.observe(hero);
 	}
 
 	/* Закрыть попап */

@@ -1,0 +1,105 @@
+.article {
+	position: relative;
+	padding: 140px 0 100px;
+
+	@include max(ti) {
+		padding: 100px 0 50px;
+	}
+
+	&__container {
+		@include max(ti) {
+			padding: 0 20px;
+		}
+	}
+
+	&__top {
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		width: 100%;
+		padding-right: 165px;
+		margin-bottom: -20px;
+
+		@include max(tl) {
+			padding-right: 40px;
+		}
+
+		@include max(ti) {
+			padding-right: 20px;
+		}
+	}
+
+	&__top-link {
+		transition: 0.3s ease;
+
+		@include max(ti) {
+			max-width: 100px;
+		}
+
+		&:hover {
+			transform: translateY(-10px);
+		}
+	}
+
+	&__button {
+		font-weight: 500;
+		font-size: 20px;
+		padding: 17px 20px;
+		clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
+		margin-top: 17px;
+
+		@include max(ti) {
+			gap: 8px;
+			padding: 9px;
+			clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 0 100%);
+			font-weight: 400;
+			font-size: fluid(10, 12, 576, 768);
+		}
+
+		svg {
+			width: 26px;
+			height: 26px;
+
+			@include max(ti) {
+				width: 16px;
+				height: 12px;
+			}
+		}
+	}
+
+	&__bg {
+		position: absolute;
+		inset: 0;
+
+		@include max(ti) {
+			bottom: 60%;
+		}
+
+		&::before {
+			@include max(ti) {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background: rgba(0, 0, 0, 0.45);
+			}
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 20%;
+			background: linear-gradient(0deg,rgba(13, 14, 25, 1) 0%, rgba(255, 255, 255, 0) 100%);
+		}
+	}
+
+	&__bg-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}

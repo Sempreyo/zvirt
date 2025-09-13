@@ -36,6 +36,7 @@
 		font-size: 52px;
 		line-height: 1.1;
 		text-transform: uppercase;
+		overflow: hidden;
 
 		@include max(ti) {
 			font-size: fluid(42, 52, 576, 768);
@@ -43,6 +44,11 @@
 
 		@include max(t) {
 			font-size: fluid(19, 42, 0, 576);
+		}
+
+		.char {
+			transform: translateY(calc(100% + 30px));
+			transition: 0.3s ease;
 		}
 	}
 
@@ -147,6 +153,7 @@
 		position: absolute;
 		width: 38px;
 		height: 37px;
+		animation: flicker 4s ease;
 
 		@include max(ti) {
 			width: 18px;
